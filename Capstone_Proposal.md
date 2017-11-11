@@ -7,46 +7,46 @@ November 10th, 2017
 
 ### Domain Background
 
-	In the domains of architecture and urban planning, building typology is an often referenced idea when analyzing neighbordhoods, buildings, and public spaces. Historically, buildings have been classified in two primary ways: by form (or shape), and by use (what happens inside). In the early 19th century, the architect Jean-Nicolas-Louis Durand proposed the notion of architectural typology in his book Precis des Lecons d'Architecture (1). Since then, many efforts have been made to apply machine learning techniques to Urban Design and Architectural analysis, including with software such as GIS (2) and spatial recognition systems for identifying ideal sites for new development projects (3).
+In the domains of architecture and urban planning, building typology is an often referenced idea when analyzing neighbordhoods, buildings, and public spaces. Historically, buildings have been classified in two primary ways: by form (or shape), and by use (what happens inside). In the early 19th century, the architect Jean-Nicolas-Louis Durand proposed the notion of architectural typology in his book Precis des Lecons d'Architecture (1). Since then, many efforts have been made to apply machine learning techniques to Urban Design and Architectural analysis, including with software such as GIS (2) and spatial recognition systems for identifying ideal sites for new development projects (3).
 
-	As an architect myself, I'm curious about ways that we can quantify qualitative information about buildings, and vice versa. There are relatively few datasets in the field of architecture, and establishing and automating methods for classifying buildings, in particular into qualitative categories, will be essential in this endeavor. Being able to classify a building as a certain typology enables many other kinds of analysis. This information can be used to assess the characteristics of a neighborhood, predict property values, identify areas for new development, or countless other tasks related to the built environment.
+As an architect myself, I'm curious about ways that we can quantify qualitative information about buildings, and vice versa. There are relatively few datasets in the field of architecture, and establishing and automating methods for classifying buildings, in particular into qualitative categories, will be essential in this endeavor. Being able to classify a building as a certain typology enables many other kinds of analysis. This information can be used to assess the characteristics of a neighborhood, predict property values, identify areas for new development, or countless other tasks related to the built environment.
 
 ### Problem Statement
 _(approx. 1 paragraph)_
 
-	Databases of building typologies do not exist for most of the world. To exacerbate this problem, buildings often no longer limit themselves to the typical typologies (schools, homes, hospitals, churches, for instance), and instead, are often mixed-use. However, physical charactistics of buildings can be easily observed or deduced from satelite images (3). 
+Databases of building typologies do not exist for most of the world. To exacerbate this problem, buildings often no longer limit themselves to the typical typologies (schools, homes, hospitals, churches, for instance), and instead, are often mixed-use. However, physical charactistics of buildings can be easily observed or deduced from satelite images (3). 
 
-	__The problem, then, is: How can we automate the process of classifying buildings into their respective typologies by analyzing this physical information?__
+__The problem, then, is: How can we automate the process of classifying buildings into their respective typologies by analyzing this physical information?__
 
-	The problem is quantifiable and measurable because we can logically assess any individual building as to the makeup of its use. It is a problem that is replicable anywhere on earth that there are buildings, since google earth shows satelite images from which we can mine physical data.
+The problem is quantifiable and measurable because we can logically assess any individual building as to the makeup of its use. It is a problem that is replicable anywhere on earth that there are buildings, since google earth shows satelite images from which we can mine physical data.
 
 ### Datasets and Inputs
 
-	New York City's Department of City Planning puts out a dataset called The Primary Land Use Tax Lot Output (PLUTO),  which contain information about plots of lands, the characteristics of the buildings on that land, and various administrative districts. This dataset was obtained as a download from Kaggle (4). This dataset contains information for over 65,000 lots. 
+New York City's Department of City Planning puts out a dataset called The Primary Land Use Tax Lot Output (PLUTO),  which contain information about plots of lands, the characteristics of the buildings on that land, and various administrative districts. This dataset was obtained as a download from Kaggle (4). This dataset contains information for over 65,000 lots. 
 
-	While the dataset has roughly 80 variables for each lot, those of particular interest are:
+While the dataset has roughly 80 variables for each lot, those of particular interest are:
 
-	__Physical Characteristics__
-		* Total Building Floor Area
-		* Lot Area 
-		* Number of Floors
-		* Lot Frontage
-		* Lot Depth
-		* Building Frontage
-		* Building Depth
-		* Floor Area Ration (FAR)
+__Physical Characteristics__
+	* Total Building Floor Area
+	* Lot Area 
+	* Number of Floors
+	* Lot Frontage
+	* Lot Depth
+	* Building Frontage
+	* Building Depth
+	* Floor Area Ration (FAR)
 
-	__Other Data__
-		* Commercial, Residential, Office, Retail, Factory, Storage, Garage, and Other Floor Area
-		* Building Class
-		* Zoning District
+__Other Data__
+	* Commercial, Residential, Office, Retail, Factory, Storage, Garage, and Other Floor Area
+	* Building Class
+	* Zoning District
 
-	Since my goal is to use physical characteristics to classify buildings into typological groups, I will test different combinations of Physical Characteristics to see which best enable clustering of the data into building typologies. I will then compare the percentages of commercial/residential/office etc. floor areas in each cluster to better understand and evaluate the clusters.
+Since my goal is to use physical characteristics to classify buildings into typological groups, I will test different combinations of Physical Characteristics to see which best enable clustering of the data into building typologies. I will then compare the percentages of commercial/residential/office etc. floor areas in each cluster to better understand and evaluate the clusters.
 
 ### Solution Statement
 _(approx. 1 paragraph)_
 
-	Unsupervised learning can be used on this task. As was used in the Customer Segment project, this solution can follow the process of: Data Exploration, Data Preprocessing, Feature Transformation, Clustering, and drawing conlusions(5). For more detail, see the project design section. 
+Unsupervised learning can be used on this task. As was used in the Customer Segment project, this solution can follow the process of: Data Exploration, Data Preprocessing, Feature Transformation, Clustering, and drawing conlusions(5). For more detail, see the project design section. 
 
 ### Benchmark Model
 _(approximately 1-2 paragraphs)_
