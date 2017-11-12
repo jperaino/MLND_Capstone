@@ -1,5 +1,5 @@
-# Machine Learning Engineer Nanodegree
-## Capstone Proposal
+# Classifying Architectural Building Typologies Using Unsupervised Learning
+## MLND Capstone Proposal
 Jim Peraino  
 November 11th, 2017
 
@@ -48,19 +48,40 @@ Unsupervised learning can be used on this task. As was used in the Customer Segm
 
 ### Benchmark Model
 
-Existing methods for classifying building typology us
-
-In the case of this dataset, we 
+Existing methods for classifying building typology enter the use of each building one by one, through analysis of the use. In the case of this dataset, this data is included, and will serve as the benchmark model. This data will not be used in constructing the new model, but will instead be used to compare its performance. The benchmark model should have near 100% accuracy, as each item is entered individually. We expect that the unsupervised learning model will have significantly lower accuracy than the benchmark since it will be using only the information that can be gained from physical analysis. 
 
 
 ### Evaluation Metrics
 
-We would expect that the benchmark model 
+The evaluation metric will be the extent to which each cluster is homogenous in terms of its program (residential, retail, etc). This can be determined by calculating the standard deviation of the primary programmatic element in  each cluster. A smaller standard deviation would indicate that the cluster is more homogeneous, and a larger standard deviation would indicate that it is heterogeneous. 
 
 ### Project Design
-_(approx. 1 page)_
 
-TODO
+The project design will follow a similar method to the MLND Customer Segment Project (5), and will use the following main steps:
+
+__Data Preprocessing__
+
+Most of the data is in a float format. For this data, it can be left as is, though it will potentially need to be scaled in feature transformation. When evaluating and considering the evaluation metrics, it will be important to use the Building Class or Zoning District data, which will need to be one-hot encoded. Some of the data will need to go through a process of feature scaling.
+
+__Data Exploration__
+
+Individual features can be identified, and their relevance to the problem at hand can be determined by calculating the coefficient of determination. 
+
+__Feature Transformation__
+
+I will then use Principal Component Analysis to draw conclusions about variance in the data.
+
+__Clustering__
+
+I will then use K-Means clustering to create clusters from the data. If necessary, I may also try using a Gaussian Mixture Model. This information can be visualized. 
+
+
+__Evaluation__
+Within each cluster, I will determine the main programmatic element from the benchmark model, and will then calculate  the standard deviation for that cluster.
+
+__Conclusions__
+Any conclusions from the data can then be analyzed and stated. 
+
 -----------
 
 References:
